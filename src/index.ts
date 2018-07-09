@@ -9,11 +9,11 @@ import {RpsContext,RpsModule,rpsAction} from 'rpscript-interface';
 @RpsModule("hogan")
 export default class RPSHogan {
 
-  @rpsAction({verbName:'moustacheToHtml'})
-  async moustacheToHtml (ctx:RpsContext,opts:Object, content:string) : Promise<string>{
+  @rpsAction({verbName:'compile-hogan'})
+  async moustacheToHtml (ctx:RpsContext,opts:Object, content:string,data:Object) : Promise<string>{
     let compiled = Hogan.compile(content,opts);
 
-    return compiled.render(ctx.variables);
+    return compiled.render(data);
   }
 
 }

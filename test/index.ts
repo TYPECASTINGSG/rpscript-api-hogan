@@ -9,9 +9,8 @@ m.describe('RPSHogan', () => {
   m.it('should moustach to html', async function () {
     let md = new RPSMarkdown;
     let ctx = new RpsContext;
-    ctx.variables = {screenName:'wei3hua2'};
 
-    let output = await md.moustacheToHtml(ctx,{},"Follow @{{screenName}}.");
+    let output = await md.moustacheToHtml(ctx,{},"Follow @{{screenName}}.",{screenName:'wei3hua2'});
 
     expect(output).to.be.equals('Follow @wei3hua2.');
 
