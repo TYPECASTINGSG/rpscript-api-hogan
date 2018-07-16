@@ -1,11 +1,10 @@
-/**
- * @module Hogan
- */
 
-// import Hogan from 'hogan.js';
 let Hogan = require('hogan.js');
 import {RpsContext,RpsModule,rpsAction} from 'rpscript-interface';
 
+/** Hogan Module
+ * @namespace Hogan
+*/
 @RpsModule("hogan")
 export default class RPSHogan {
 
