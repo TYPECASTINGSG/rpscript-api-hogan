@@ -9,10 +9,14 @@ import {RpsContext,RpsModule,rpsAction} from 'rpscript-interface';
 export default class RPSHogan {
 
   @rpsAction({verbName:'compile-hogan'})
-  async moustacheToHtml (ctx:RpsContext,opts:Object, content:string) : Promise<string>{
-    let compiled = Hogan.compile(content,opts);
+  async moustacheToHtml (ctx:RpsContext,opts:Object, content:string, data?:Object) : Promise<string|Function>{
+    if(!content) throw Error('Hogan content not found');
+    else {
+      let compiled = Hogan.compile(content,opts);
 
-    return compiled.render(ctx.variables);
+      if(!data) return compiled;
+      else return compiled.render(data);
+    }
   }
 
 }
