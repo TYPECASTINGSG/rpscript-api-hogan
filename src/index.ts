@@ -12,7 +12,7 @@ import {RpsContext,RpsModule,rpsAction} from 'rpscript-interface';
 export default class RPSHogan {
 
   /**
- * @function compile-hogan
+ * @function hogan
  * @memberof Hogan
  * @example
  * hogan-compile 'template-content' {a:1,b:2}
@@ -21,10 +21,10 @@ export default class RPSHogan {
  * @param {Object} context context to be passed into the template.
  * @param {*} options refer to Hogan.js documentation.
  * 
- * @summary compile-hogan :: String → Object → String
+ * @summary hogan :: String → Object → String
  * 
 */
-  @rpsAction({verbName:'compile-hogan'})
+  @rpsAction({verbName:'hogan'})
   async moustacheToHtml (ctx:RpsContext,opts:Object, content?:string, context?:Object) : Promise<string|Function>{
     function compile (content,context?) {
       let compiled = Hogan.compile(content,opts);
