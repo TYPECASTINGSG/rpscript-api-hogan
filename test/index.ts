@@ -13,6 +13,10 @@ m.describe('RPSHogan', () => {
     let output:any = await md.moustacheToHtml(ctx,{},"Follow @{{screenName}}.",{screenName:'wei3hua2'});
     expect(output).to.be.equals('Follow @wei3hua2.');
 
+    output = await md.moustacheToHtml(ctx,{});
+    let result = output("Follow @{{screenName}}.")({screenName:'wei3hua2'});
+    expect(result).to.be.equals('Follow @wei3hua2.');
+
   }).timeout(0);
 
 })
