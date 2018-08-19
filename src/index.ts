@@ -3,7 +3,7 @@ let Hogan = require('hogan.js');
 import {RpsContext,RpsModule,rpsAction} from 'rpscript-interface';
 
 /** Module for moustache templating
- * @see {@link http://twitter.github.io/hogan.js/|Hogan}
+ * @see {@link http://twitter.github.io/hogan.js/}
  * @namespace Hogan
  * @example
  * rps install hogan
@@ -15,11 +15,13 @@ export default class RPSHogan {
  * @function hogan
  * @memberof Hogan
  * @example
- * hogan-compile 'template-content' {a:1,b:2}
+ * hogan 'Follow @{{screenName}}' {screenName:'therpscript'}
  * 
  * @param {String} template template content.
  * @param {Object} context context to be passed into the template.
  * @param {*} options refer to Hogan.js documentation.
+ *
+ * @returns {String}  Compiled content.
  * 
  * @summary hogan :: String → Object → String
  * 
